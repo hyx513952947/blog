@@ -1,0 +1,26 @@
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Hexo version: 3.7.1","time":"2018-05-21T08:01:32.380Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Working directory: D:\\owner_delete\\hexo\\","time":"2018-05-21T08:01:32.383Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Config loaded: D:\\owner_delete\\hexo\\_config.yml","time":"2018-05-21T08:01:32.536Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-deployer-git","time":"2018-05-21T08:01:32.602Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-archive","time":"2018-05-21T08:01:32.609Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-category","time":"2018-05-21T08:01:32.612Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-index","time":"2018-05-21T08:01:32.616Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-searchdb","time":"2018-05-21T08:01:32.624Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-search","time":"2018-05-21T08:01:32.626Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-generator-tag","time":"2018-05-21T08:01:32.629Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-renderer-ejs","time":"2018-05-21T08:01:32.635Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-renderer-stylus","time":"2018-05-21T08:01:32.636Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-renderer-marked","time":"2018-05-21T08:01:32.644Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Plugin loaded: hexo-server","time":"2018-05-21T08:01:32.793Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\merge-configs.js","time":"2018-05-21T08:01:32.801Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\center-quote.js","time":"2018-05-21T08:01:32.801Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\button.js","time":"2018-05-21T08:01:32.801Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\merge.js","time":"2018-05-21T08:01:32.804Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\exturl.js","time":"2018-05-21T08:01:32.805Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\label.js","time":"2018-05-21T08:01:32.805Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\full-image.js","time":"2018-05-21T08:01:32.806Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\group-pictures.js","time":"2018-05-21T08:01:32.806Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\lazy-image.js","time":"2018-05-21T08:01:32.807Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\tabs.js","time":"2018-05-21T08:01:32.807Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\note.js","time":"2018-05-21T08:01:32.807Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Database saved","time":"2018-05-21T08:01:32.812Z","v":0}
