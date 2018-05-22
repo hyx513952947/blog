@@ -3,9 +3,91 @@
 
 
     
+<<<<<<< HEAD
   <url>
     <loc>http://www.huangguaniu.top/2018/05/21/%E6%A8%A1%E5%9D%97%E6%A8%A1%E5%BC%8F%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2018-05-22T13:29:40.884Z</lastmod>
+    <data>
+        <display>
+        <title>模块模式设计</title>
+        <pubTime>2018-05-21T08:22:13.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+=======
+    
+  <url>
+    <loc>http://www.huangguaniu.top/2018/05/22/markdown%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
+    <lastmod>2018-05-22T03:25:39.964Z</lastmod>
+    <data>
+        <display>
+        <title>markdown编辑器</title>
+        <pubTime>2018-05-22T02:23:08.000Z</pubTime>
+        
+        <tag>markdown</tag>
+>>>>>>> hexos
+         
+         
+           
+             
+<<<<<<< HEAD
+              <breadCrumb title="通用" url="http://www.huangguaniu.top/categories/%E9%80%9A%E7%94%A8/"/>
+=======
+              <breadCrumb title="编辑器" url="http://www.huangguaniu.top/categories/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+>>>>>>> hexos
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+<<<<<<< HEAD
+    <loc>http://www.huangguaniu.top/2018/05/22/hello-world/</loc>
+    <lastmod>2018-05-22T13:29:40.880Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-05-22T13:29:40.880Z</pubTime>
+        
+         
+           
+=======
+    <loc>http://www.huangguaniu.top/2018/05/21/Android%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-05-21T08:56:26.770Z</lastmod>
+    <data>
+        <display>
+        <title>Android中的设计模式</title>
+        <pubTime>2018-05-21T08:54:16.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
+          
+>>>>>>> hexos
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+<<<<<<< HEAD
+    <loc>http://www.huangguaniu.top/2018/05/21/post/</loc>
+    <lastmod>2018-05-22T13:29:40.880Z</lastmod>
+    <data>
+        <display>
+        <title>菜园子博客开始的地方</title>
+        <pubTime>2018-05-21T04:49:01.000Z</pubTime>
+        
+        <tag>给自己</tag>
+         
+         
+           
+=======
+    <loc>http://www.huangguaniu.top/2018/05/21/%E6%A8%A1%E5%9D%97%E6%A8%A1%E5%BC%8F%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2018-05-21T08:53:47.356Z</lastmod>
     <data>
         <display>
         <title>模块模式设计</title>
@@ -18,38 +100,7 @@
              
               <breadCrumb title="通用" url="http://www.huangguaniu.top/categories/%E9%80%9A%E7%94%A8/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.huangguaniu.top/2018/05/22/hello-world/</loc>
-    <lastmod>2018-05-22T13:29:40.880Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-05-22T13:29:40.880Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.huangguaniu.top/2018/05/21/post/</loc>
-    <lastmod>2018-05-22T13:29:40.880Z</lastmod>
-    <data>
-        <display>
-        <title>菜园子博客开始的地方</title>
-        <pubTime>2018-05-21T04:49:01.000Z</pubTime>
-        
-        <tag>给自己</tag>
-         
-         
-           
+>>>>>>> hexos
         </display>
     </data>
     </url>
@@ -57,7 +108,11 @@
     
   <url>
     <loc>http://www.huangguaniu.top/2018/05/21/java%E5%8F%8D%E5%B0%84/</loc>
+<<<<<<< HEAD
     <lastmod>2018-05-22T13:29:40.880Z</lastmod>
+=======
+    <lastmod>2018-05-21T08:18:23.296Z</lastmod>
+>>>>>>> hexos
     <data>
         <display>
         <title>java反射</title>
@@ -75,6 +130,7 @@
     </url>
 
     
+<<<<<<< HEAD
     
   <url>
     <loc>http://www.huangguaniu.top/2018/05/22/markdown%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
@@ -85,11 +141,26 @@
         <pubTime>2018-05-22T02:23:08.000Z</pubTime>
         
         <tag>markdown</tag>
+=======
+  <url>
+    <loc>http://www.huangguaniu.top/2018/05/21/%E5%A6%9E%E5%A6%9E%E7%85%A7%E7%89%87/</loc>
+    <lastmod>2018-05-21T07:56:11.195Z</lastmod>
+    <data>
+        <display>
+        <title>妞妞照片</title>
+        <pubTime>2018-05-21T07:08:38.000Z</pubTime>
+        
+        <tag>妞妞</tag>
+>>>>>>> hexos
          
          
            
              
+<<<<<<< HEAD
               <breadCrumb title="编辑器" url="http://www.huangguaniu.top/categories/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+=======
+              <breadCrumb title="照片" url="http://www.huangguaniu.top/categories/%E7%85%A7%E7%89%87/"/>
+>>>>>>> hexos
           
         </display>
     </data>
@@ -97,6 +168,7 @@
 
     
   <url>
+<<<<<<< HEAD
     <loc>http://www.huangguaniu.top/2018/05/21/Android%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-05-21T08:56:26.770Z</lastmod>
     <data>
@@ -111,12 +183,26 @@
              
               <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
           
+=======
+    <loc>http://www.huangguaniu.top/2018/05/21/%E6%88%91%E7%9A%84%E5%A6%9E%E5%A6%9E/</loc>
+    <lastmod>2018-05-21T06:56:51.939Z</lastmod>
+    <data>
+        <display>
+        <title>我的妞妞</title>
+        <pubTime>2018-05-21T05:29:47.000Z</pubTime>
+        
+        <tag>妞妞</tag>
+         
+         
+           
+>>>>>>> hexos
         </display>
     </data>
     </url>
 
     
   <url>
+<<<<<<< HEAD
     <loc>http://www.huangguaniu.top/2018/05/21/%E5%A6%9E%E5%A6%9E%E7%85%A7%E7%89%87/</loc>
     <lastmod>2018-05-21T07:56:11.195Z</lastmod>
     <data>
@@ -131,12 +217,24 @@
              
               <breadCrumb title="照片" url="http://www.huangguaniu.top/categories/%E7%85%A7%E7%89%87/"/>
           
+=======
+    <loc>http://www.huangguaniu.top/2018/05/22/hello-world/</loc>
+    <lastmod>2018-05-21T05:07:26.869Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-05-22T01:56:54.877Z</pubTime>
+        
+         
+           
+>>>>>>> hexos
         </display>
     </data>
     </url>
 
     
   <url>
+<<<<<<< HEAD
     <loc>http://www.huangguaniu.top/2018/05/21/%E6%88%91%E7%9A%84%E5%A6%9E%E5%A6%9E/</loc>
     <lastmod>2018-05-21T06:56:51.939Z</lastmod>
     <data>
@@ -145,6 +243,16 @@
         <pubTime>2018-05-21T05:29:47.000Z</pubTime>
         
         <tag>妞妞</tag>
+=======
+    <loc>http://www.huangguaniu.top/2018/05/21/post/</loc>
+    <lastmod>2018-05-21T05:03:35.609Z</lastmod>
+    <data>
+        <display>
+        <title>菜园子博客开始的地方</title>
+        <pubTime>2018-05-21T04:49:01.000Z</pubTime>
+        
+        <tag>给自己</tag>
+>>>>>>> hexos
          
          
            
