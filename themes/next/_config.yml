@@ -98,7 +98,8 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  #sitemap: /baidusitemap.xml || baidusitemap
+  #baidusitemap: /baidusitemap.xml
   #commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
@@ -146,8 +147,8 @@ social_icons:
 # Blog rolls
 links_icon: link
 links_title: Links
-links_layout: block
-#links_layout: inline
+links_layout: inline
+#links_layout: block inline
 #links:
   #Title: http://example.com/
 
@@ -164,7 +165,7 @@ toc:
   number: true
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
@@ -188,7 +189,7 @@ sidebar:
   #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 12
+  offset: 20
 
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: true
@@ -197,7 +198,7 @@ sidebar:
   scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -628,7 +629,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
+  style: flat
   icons: false
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).

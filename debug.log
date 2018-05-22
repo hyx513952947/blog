@@ -24,3 +24,30 @@
 {"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\tabs.js","time":"2018-05-21T08:01:32.807Z","v":0}
 {"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\note.js","time":"2018-05-21T08:01:32.807Z","v":0}
 {"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":10904,"level":20,"msg":"Database saved","time":"2018-05-21T08:01:32.812Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Hexo version: 3.7.1","time":"2018-05-22T04:53:02.228Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Working directory: D:\\owner_delete\\git\\web\\","time":"2018-05-22T04:53:02.231Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Config loaded: D:\\owner_delete\\git\\web\\_config.yml","time":"2018-05-22T04:53:02.409Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-deployer-git","time":"2018-05-22T04:53:02.488Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-archive","time":"2018-05-22T04:53:02.494Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-category","time":"2018-05-22T04:53:02.497Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-index","time":"2018-05-22T04:53:02.500Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-search","time":"2018-05-22T04:53:02.503Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-searchdb","time":"2018-05-22T04:53:02.513Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-generator-tag","time":"2018-05-22T04:53:02.515Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-renderer-ejs","time":"2018-05-22T04:53:02.521Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-renderer-marked","time":"2018-05-22T04:53:02.530Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-renderer-stylus","time":"2018-05-22T04:53:02.531Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-server","time":"2018-05-22T04:53:02.673Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Plugin loaded: hexo-wordcount","time":"2018-05-22T04:53:02.753Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\button.js","time":"2018-05-22T04:53:02.782Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\merge-configs.js","time":"2018-05-22T04:53:02.787Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\center-quote.js","time":"2018-05-22T04:53:02.787Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\exturl.js","time":"2018-05-22T04:53:02.788Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\label.js","time":"2018-05-22T04:53:02.788Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\lazy-image.js","time":"2018-05-22T04:53:02.789Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\note.js","time":"2018-05-22T04:53:02.789Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\merge.js","time":"2018-05-22T04:53:02.792Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\full-image.js","time":"2018-05-22T04:53:02.792Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\group-pictures.js","time":"2018-05-22T04:53:02.793Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Script loaded: themes\\next\\scripts\\tags\\tabs.js","time":"2018-05-22T04:53:02.794Z","v":0}
+{"name":"hexo","hostname":"DESKTOP-V1IAUUP","pid":3376,"level":20,"msg":"Database saved","time":"2018-05-22T04:53:02.798Z","v":0}
