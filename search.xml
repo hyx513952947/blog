@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[git学习笔记01]]></title>
     <url>%2F2018%2F05%2F23%2Ft%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%2F</url>
-    <content type="text"><![CDATA[第一天 基础 git保存所有的文件的快照的索引，而非对比数据的差异；操作大多数是在本地执行； 三种状态：已提交committed、已修改modified、已暂存staged 基本工作流程 本地工作目录修改文件 将文件快照存放在暂存区域 提交更新，找到暂存区快照，将快照永久存在git仓库目录 大致的流程 如果 Git 目录中保存着的特定版本文件，就属于已提交状态。 如果作了修改并已放入暂存区域，就属于已暂存状态。 如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态。]]></content>
+    <content type="text"><![CDATA[基础的知识点 基础 git保存所有的文件的快照的索引，而非对比数据的差异；操作大多数是在本地执行； 三种状态：已提交committed、已修改modified、已暂存staged 基本工作流程 本地工作目录修改文件 将文件快照存放在暂存区域 提交更新，找到暂存区快照，将快照永久存在git仓库目录 大致的流程 如果 Git 目录中保存着的特定版本文件，就属于已提交状态。 如果作了修改并已放入暂存区域，就属于已暂存状态。 如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态。 配置 配置文件git config配置git外观和行为的配置变量，在linux下有三个位置：/etc/gitconfig,~/.gitconfig 或 ~/.config/git/config,当前使用仓库的 Git 目录中的 config;在windows系统下：$HOME目录(C:\Users\$USER)的 .gitconfig),git安装目录下的gitconfig文件; 配置用户信息 $ git config --global user.name &quot;maxsu&quot; $ git config --global user.email maxsu@yiibai.com 文本编辑器 $ git config --global core.editor emacs 如果不习惯使用vim就使用该方法替换掉； 获取配置信息 git config --list]]></content>
       <categories>
         <category>git</category>
       </categories>
