@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SourceTree]]></title>
+    <url>%2F2018%2F05%2F23%2FourceTree%2F</url>
+    <content type="text"><![CDATA[git的图形化工具，只支持mac和windows 跳过账号登录在用户本地文件夹下的 SourceTree 目录下，找到accounts.json文件 没有就创建复制一下内容： [ { &quot;$id&quot;: &quot;1&quot;, &quot;$type&quot;: &quot;SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity&quot;, &quot;Authenticate&quot;: true, &quot;HostInstance&quot;: { &quot;$id&quot;: &quot;2&quot;, &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount&quot;, &quot;Host&quot;: { &quot;$id&quot;: &quot;3&quot;, &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount&quot;, &quot;Id&quot;: &quot;atlassian account&quot; }, &quot;BaseUrl&quot;: &quot;https://id.atlassian.com/&quot; }, &quot;Credentials&quot;: { &quot;$id&quot;: &quot;4&quot;, &quot;$type&quot;: &quot;SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account&quot;, &quot;Username&quot;: &quot;&quot;, &quot;Email&quot;: null }, &quot;IsDefault&quot;: false } ]]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[markdown编辑器]]></title>
     <url>%2F2018%2F05%2F22%2Fmarkdown%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
     <content type="text"><![CDATA[小书匠 下载地址能够将数据保存到github、云存贮等；]]></content>
