@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git学习笔记01]]></title>
+    <url>%2F2018%2F05%2F23%2Ft%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%2F</url>
+    <content type="text"><![CDATA[第一天 基础 git保存所有的文件的快照的索引，而非对比数据的差异；操作大多数是在本地执行； 三种状态：已提交committed、已修改modified、已暂存staged 基本工作流程 本地工作目录修改文件 将文件快照存放在暂存区域 提交更新，找到暂存区快照，将快照永久存在git仓库目录 大致的流程 如果 Git 目录中保存着的特定版本文件，就属于已提交状态。 如果作了修改并已放入暂存区域，就属于已暂存状态。 如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态。]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git基础理论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SourceTree]]></title>
     <url>%2F2018%2F05%2F23%2FourceTree%2F</url>
     <content type="text"><![CDATA[git的图形化工具，只支持mac和windows 跳过账号登录在用户本地文件夹下的 SourceTree 目录下，找到accounts.json文件 没有就创建复制一下内容： [ { &quot;$id&quot;: &quot;1&quot;, &quot;$type&quot;: &quot;SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity&quot;, &quot;Authenticate&quot;: true, &quot;HostInstance&quot;: { &quot;$id&quot;: &quot;2&quot;, &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount&quot;, &quot;Host&quot;: { &quot;$id&quot;: &quot;3&quot;, &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount&quot;, &quot;Id&quot;: &quot;atlassian account&quot; }, &quot;BaseUrl&quot;: &quot;https://id.atlassian.com/&quot; }, &quot;Credentials&quot;: { &quot;$id&quot;: &quot;4&quot;, &quot;$type&quot;: &quot;SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account&quot;, &quot;Username&quot;: &quot;&quot;, &quot;Email&quot;: null }, &quot;IsDefault&quot;: false } ]]]></content>
