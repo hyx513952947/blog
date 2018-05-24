@@ -86,14 +86,14 @@
 <meta name="description" content="无线连接设备  Network Service Discovery:NSD网络服务发现。 WiFi建立P2P连接 使用WiFi P2P服务   NSD网络发现 NsdManager  管理涉及到服务注册、监听器、取消服务等，当业务完成要及时取消注册服务(取消注册、关闭搜索服务)，防止占用资源   registerService注册监听器  resolveService解析监听器  discover">
 <meta name="keywords" content="网络发现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 基本技术点回顾">
+<meta property="og:title" content="Android 基本技术点无线设备">
 <meta property="og:url" content="http://www.huangguaniu.top/2018/05/24/Android基本技术点回顾/index.html">
 <meta property="og:site_name" content="菜园子">
 <meta property="og:description" content="无线连接设备  Network Service Discovery:NSD网络服务发现。 WiFi建立P2P连接 使用WiFi P2P服务   NSD网络发现 NsdManager  管理涉及到服务注册、监听器、取消服务等，当业务完成要及时取消注册服务(取消注册、关闭搜索服务)，防止占用资源   registerService注册监听器  resolveService解析监听器  discover">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-24T09:15:17.665Z">
+<meta property="og:updated_time" content="2018-05-24T09:19:18.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 基本技术点回顾">
+<meta name="twitter:title" content="Android 基本技术点无线设备">
 <meta name="twitter:description" content="无线连接设备  Network Service Discovery:NSD网络服务发现。 WiFi建立P2P连接 使用WiFi P2P服务   NSD网络发现 NsdManager  管理涉及到服务注册、监听器、取消服务等，当业务完成要及时取消注册服务(取消注册、关闭搜索服务)，防止占用资源   registerService注册监听器  resolveService解析监听器  discover">
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>Android 基本技术点回顾 | 菜园子</title>
+  <title>Android 基本技术点无线设备 | 菜园子</title>
   
 
 
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Android 基本技术点回顾</h2>
+          <h2 class="post-title" itemprop="name headline">Android 基本技术点无线设备</h2>
         
 
         <div class="post-meta">
@@ -346,7 +346,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-24T17:15:17+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-24T17:19:18+08:00">
                 2018-05-24
               </time>
             
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,276个字
+                  2,282个字
                 </span>
               
 
@@ -765,7 +765,8 @@ class WifiP2PBReciver extends BroadcastReceiver{
     }
 }
 }
-</code></pre><ul>
+</code></pre><hr>
+<h3 id="WiFi-P2P-服务发现"><a href="#WiFi-P2P-服务发现" class="headerlink" title="WiFi P2P 服务发现"></a>WiFi P2P 服务发现</h3><ul>
 <li>首先在本地注册一个服务，服务注册是要将服务类型、服务信息封装到WifiP2pServiceInfo中，再通过WifiP2pManager将服务添加到本地，本地服务添加后注册监听DnsSdTxtRecordListener来实时监听record记录数据，注册DnsSdServiceResponseListener接收服务的实际描述和连接的信息，前者处理记录连接的服务信息用来跟后者做对应关系处理。前者给你一组对他的服务的描述信息，然后在后者进行匹配，将描述信息与实际的硬件信息做匹配，把处理过的数据给用户看。连接后创建服务请求 addServiceRequest()，最后调用 discoverServices()</li>
 </ul>
 <ul>
@@ -897,7 +898,7 @@ serviceType与NSD中的服务类型相同;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -919,7 +920,7 @@ serviceType与NSD中的服务类型相同;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -952,7 +953,7 @@ serviceType与NSD中的服务类型相同;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无线连接设备"><span class="nav-number">1.</span> <span class="nav-text">无线连接设备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NSD网络发现"><span class="nav-number">1.1.</span> <span class="nav-text">NSD网络发现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WiFi-p2p连接"><span class="nav-number">1.2.</span> <span class="nav-text">WiFi p2p连接</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无线连接设备"><span class="nav-number">1.</span> <span class="nav-text">无线连接设备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NSD网络发现"><span class="nav-number">1.1.</span> <span class="nav-text">NSD网络发现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WiFi-p2p连接"><span class="nav-number">1.2.</span> <span class="nav-text">WiFi p2p连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WiFi-P2P-服务发现"><span class="nav-number">2.</span> <span class="nav-text">WiFi P2P 服务发现</span></a></li></ol></div>
             
 
           </div>
@@ -993,7 +994,7 @@ serviceType与NSD中的服务类型相同;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.5k</span>
+    <span title="Site words total count">13.9k</span>
   
 </div>
 
