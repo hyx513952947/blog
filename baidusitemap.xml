@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>http://www.huangguaniu.top/2018/05/24/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85-ip%E8%BF%9E%E6%8E%A5/</loc>
-    <lastmod>2018-05-24T06:02:02.401Z</lastmod>
+    <loc>http://www.huangguaniu.top/2018/05/24/Android%E5%9F%BA%E6%9C%AC%E6%8A%80%E6%9C%AF%E7%82%B9%E5%9B%9E%E9%A1%BE/</loc>
+    <lastmod>2018-05-24T07:01:41.196Z</lastmod>
     <data>
         <display>
-        <title>局域网内 ip连接</title>
-        <pubTime>2018-05-24T05:59:00.000Z</pubTime>
+        <title>Android 基本技术点回顾</title>
+        <pubTime>2018-05-24T05:39:00.000Z</pubTime>
         
-        <tag>MulticastSocket</tag>
+        <tag>网络发现</tag>
          
          
            
@@ -24,14 +24,36 @@
 
     
   <url>
-    <loc>http://www.huangguaniu.top/2018/05/24/Android%E5%9F%BA%E6%9C%AC%E6%8A%80%E6%9C%AF%E7%82%B9%E5%9B%9E%E9%A1%BE/</loc>
-    <lastmod>2018-05-24T05:58:47.186Z</lastmod>
+    <loc>http://www.huangguaniu.top/2018/05/24/ed/ndroid-WiFi-p2p/</loc>
+    <lastmod>2018-05-24T06:11:59.649Z</lastmod>
     <data>
         <display>
-        <title>Android 基本技术点回顾</title>
-        <pubTime>2018-05-24T05:39:00.000Z</pubTime>
+        <title>Android WiFi p2p</title>
+        <pubTime>2018-05-24T06:09:00.000Z</pubTime>
         
-        <tag>网络发现</tag>
+        <tag>wifi</tag>
+         
+        <tag>p2p</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.huangguaniu.top/2018/05/24/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85-ip%E8%BF%9E%E6%8E%A5/</loc>
+    <lastmod>2018-05-24T06:02:02.401Z</lastmod>
+    <data>
+        <display>
+        <title>局域网内 ip连接</title>
+        <pubTime>2018-05-24T05:59:00.000Z</pubTime>
+        
+        <tag>MulticastSocket</tag>
          
          
            
