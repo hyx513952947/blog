@@ -5,18 +5,60 @@
     
   <url>
     <loc>http://www.huangguaniu.top/2018/05/24/Android%E5%9F%BA%E6%9C%AC%E6%8A%80%E6%9C%AF%E7%82%B9%E5%9B%9E%E9%A1%BE/</loc>
-    <lastmod>2018-05-24T05:10:34.510Z</lastmod>
+    <lastmod>2018-05-24T07:01:41.196Z</lastmod>
     <data>
         <display>
-        <title>Android基本技术点回顾</title>
-        <pubTime>2018-05-24T03:26:00.000Z</pubTime>
+        <title>Android 基本技术点回顾</title>
+        <pubTime>2018-05-24T05:39:00.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>网络发现</tag>
          
          
            
              
-              <breadCrumb title="基础" url="http://www.huangguaniu.top/categories/%E5%9F%BA%E7%A1%80/"/>
+              <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.huangguaniu.top/2018/05/24/ed/ndroid-WiFi-p2p/</loc>
+    <lastmod>2018-05-24T06:11:59.649Z</lastmod>
+    <data>
+        <display>
+        <title>Android WiFi p2p</title>
+        <pubTime>2018-05-24T06:09:00.000Z</pubTime>
+        
+        <tag>wifi</tag>
+         
+        <tag>p2p</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.huangguaniu.top/2018/05/24/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85-ip%E8%BF%9E%E6%8E%A5/</loc>
+    <lastmod>2018-05-24T06:02:02.401Z</lastmod>
+    <data>
+        <display>
+        <title>局域网内 ip连接</title>
+        <pubTime>2018-05-24T05:59:00.000Z</pubTime>
+        
+        <tag>MulticastSocket</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.huangguaniu.top/categories/Android/"/>
           
         </display>
     </data>
@@ -25,18 +67,18 @@
     
   <url>
     <loc>http://www.huangguaniu.top/2018/05/24/va%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8/</loc>
-    <lastmod>2018-05-24T03:25:11.226Z</lastmod>
+    <lastmod>2018-05-24T05:55:03.340Z</lastmod>
     <data>
         <display>
         <title>java的四种引用</title>
         <pubTime>2018-05-24T03:02:00.000Z</pubTime>
         
-        <tag>java</tag>
+        <tag>引用</tag>
          
          
            
              
-              <breadCrumb title="引用" url="http://www.huangguaniu.top/categories/%E5%BC%95%E7%94%A8/"/>
+              <breadCrumb title="Java" url="http://www.huangguaniu.top/categories/Java/"/>
           
         </display>
     </data>

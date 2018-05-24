@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/猴猴.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/猴猴.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/猴猴.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/猴猴.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MulticastSocket," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="转载https://blog.csdn.net/jspping/article/details/64438515在当今的互联网时代，很多互联网公司、方案公司、智能设备公司或多或少都会接触一些局域网内的相关开发，比如某公司研发了一个app，该app需求是在局域网和网域网都可以获取自己好友的消息或信息，网域网下技术人员可以通过服务器转接信息和发送，实现交互，但是在非联网的局域网下使用部分非使用网络的功">
+<meta name="keywords" content="MulticastSocket">
+<meta property="og:type" content="article">
+<meta property="og:title" content="局域网内 ip连接">
+<meta property="og:url" content="http://www.huangguaniu.top/2018/05/24/局域网内-ip连接/index.html">
+<meta property="og:site_name" content="菜园子">
+<meta property="og:description" content="转载https://blog.csdn.net/jspping/article/details/64438515在当今的互联网时代，很多互联网公司、方案公司、智能设备公司或多或少都会接触一些局域网内的相关开发，比如某公司研发了一个app，该app需求是在局域网和网域网都可以获取自己好友的消息或信息，网域网下技术人员可以通过服务器转接信息和发送，实现交互，但是在非联网的局域网下使用部分非使用网络的功">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-24T06:02:02.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="局域网内 ip连接">
+<meta name="twitter:description" content="转载https://blog.csdn.net/jspping/article/details/64438515在当今的互联网时代，很多互联网公司、方案公司、智能设备公司或多或少都会接触一些局域网内的相关开发，比如某公司研发了一个app，该app需求是在局域网和网域网都可以获取自己好友的消息或信息，网域网下技术人员可以通过服务器转接信息和发送，实现交互，但是在非联网的局域网下使用部分非使用网络的功">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":20,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":8},
+      labels: {"input_placeholder":"搜索结果","hits_empty":"没有找到相关内容: ${query}","hits_stats":"在 ${time} ms内找到 ${hits} 条结果"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.huangguaniu.top/2018/05/24/局域网内-ip连接/"/>
+
+
+
+
+
+  <title>局域网内 ip连接 | 菜园子</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菜园子</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">我的菜园子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.huangguaniu.top/2018/05/24/局域网内-ip连接/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大帅">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜园子">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">局域网内 ip连接</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T13:59:00+08:00">
+                2018-05-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-24T14:02:02+08:00">
+                2018-05-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,706个字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转载<a href="https://blog.csdn.net/jspping/article/details/64438515" target="_blank" rel="noopener">https://blog.csdn.net/jspping/article/details/64438515</a><br>在当今的互联网时代，很多互联网公司、方案公司、智能设备公司或多或少都会接触一些局域网内的相关开发，比如某公司研发了一个app，该app需求是在局域网和网域网都可以获取自己好友的消息或信息，网域网下技术人员可以通过服务器转接信息和发送，实现交互，但是在非联网的局域网下使用部分非使用网络的功能，这就需要研究一些比较不常用的类，在通常情况下，可能大部分人首先想到的肯定是0-255的逐个去ping，这样效率超级低！而且粗暴的方式还可能导致oom，之前说到的 ping ，就是比如局域网下发射信号的主机即服务器，这里我就形象的说是路由器吧，比如路由器的ip是192.168.0.1，那连接它的其他设备的ip被分配的ip也是192.168.0.xxx，这里的xxx是一个取值范围0-255，很多时候大家为了方便就采用循环来对0-255这样的一个一个的去ping，也就是像192.168.0.2、192.168.0.3……这样一直到255,效率非常慢。。。</p>
+<p>所以今天就给大家分享一个好东西，java.net.MulticastSocket</p>
+<p>MulticastSocket 继承自 DatagramSocket</p>
+<p>[java] view plain copy<br>/* </p>
+<ul>
+<li>Licensed to the Apache Software Foundation (ASF) under one or more </li>
+<li>contributor license agreements.  See the NOTICE file distributed with </li>
+<li>this work for additional information regarding copyright ownership. </li>
+<li>The ASF licenses this file to You under the Apache License, Version 2.0 </li>
+<li>(the “License”); you may not use this file except in compliance with </li>
+<li>the License.  You may obtain a copy of the License at </li>
+<li></li>
+<li><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a> </li>
+<li></li>
+<li>Unless required by applicable law or agreed to in writing, software </li>
+<li>distributed under the License is distributed on an “AS IS” BASIS, </li>
+<li>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. </li>
+<li>See the License for the specific language governing permissions and </li>
+<li>limitations under the License.<br>*/  </li>
+</ul>
+<p>package java.net;  </p>
+<p>import java.io.IOException;<br>import java.util.Enumeration;<br>import libcore.io.IoUtils;  </p>
+<p>/** </p>
+<ul>
+<li>This class implements a multicast socket for sending and receiving IP </li>
+<li>multicast datagram packets. </li>
+<li></li>
+<li><p>@see DatagramSocket<br>*/<br>public class MulticastSocket extends DatagramSocket {<br> /** </p>
+<ul>
+<li>Stores the address supplied to setInterface so we can return it from getInterface. The </li>
+<li><p>translation to an interface index is lossy because an interface can have multiple addresses.<br>*/<br>private InetAddress setAddress;  </p>
+<p>/** </p>
+</li>
+<li>Constructs a multicast socket, bound to any available port on the </li>
+<li>local host. </li>
+<li></li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public MulticastSocket() throws IOException {<br> setReuseAddress(true);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Constructs a multicast socket, bound to the specified {@code port} on the </li>
+<li>local host. </li>
+<li></li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public MulticastSocket(int port) throws IOException {<br> super(port);<br> setReuseAddress(true);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Constructs a {@code MulticastSocket} bound to the address and port specified by </li>
+<li>{@code localAddress}, or an unbound {@code MulticastSocket} if {@code localAddress == null}. </li>
+<li></li>
+<li>@throws IllegalArgumentException if {@code localAddress} is not supported (because it’s not </li>
+<li>an {@code InetSocketAddress}, say). </li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public MulticastSocket(SocketAddress localAddress) throws IOException {<br> super(localAddress);<br> setReuseAddress(true);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Returns an address of the outgoing network interface used by this socket. To avoid </li>
+<li>inherent unpredictability, new code should use {@link #getNetworkInterface} instead. </li>
+<li></li>
+<li><p>@throws SocketException if an error occurs.<br>*/<br>public InetAddress getInterface() throws SocketException {<br> checkOpen();<br> if (setAddress != null) {  </p>
+<pre><code>return setAddress;  
+</code></pre><p> }<br> InetAddress ipvXaddress = (InetAddress) impl.getOption(SocketOptions.IP_MULTICAST_IF);<br> if (ipvXaddress.isAnyLocalAddress()) {  </p>
+<pre><code>// the address was not set at the IPv4 level so check the IPv6  
+// level  
+NetworkInterface theInterface = getNetworkInterface();  
+if (theInterface != null) {  
+    Enumeration&lt;InetAddress&gt; addresses = theInterface.getInetAddresses();  
+    if (addresses != null) {  
+        while (addresses.hasMoreElements()) {  
+            InetAddress nextAddress = addresses.nextElement();  
+            if (nextAddress instanceof Inet6Address) {  
+                return nextAddress;  
+            }  
+        }  
+    }  
+}  
+</code></pre><p> }<br> return ipvXaddress;<br>}  </p>
+<p>/** </p>
+</li>
+<li>Returns the outgoing network interface used by this socket. </li>
+<li></li>
+<li><p>@throws SocketException if an error occurs.<br>*/<br>public NetworkInterface getNetworkInterface() throws SocketException {<br> checkOpen();<br> int index = (Integer) impl.getOption(SocketOptions.IP_MULTICAST_IF2);<br> if (index != 0) {  </p>
+<pre><code>return NetworkInterface.getByIndex(index);  
+</code></pre><p> }<br> return NetworkInterface.forUnboundMulticastSocket();<br>}  </p>
+<p>/** </p>
+</li>
+<li>Returns the time-to-live (TTL) for multicast packets sent on this socket. </li>
+<li></li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public int getTimeToLive() throws IOException {<br> checkOpen();<br> return impl.getTimeToLive();<br>}  </p>
+<p>/** </p>
+</li>
+<li>Returns the time-to-live (TTL) for multicast packets sent on this socket. </li>
+<li></li>
+<li>@throws IOException if an error occurs. </li>
+<li><p>@deprecated Use {@link #getTimeToLive} instead.<br>*/<br>@Deprecated<br>public byte getTTL() throws IOException {<br> checkOpen();<br> return impl.getTTL();<br>}  </p>
+<p>/** </p>
+</li>
+<li>Adds this socket to the specified multicast group. A socket must join a </li>
+<li>group before data may be received. A socket may be a member of multiple </li>
+<li>groups but may join any group only once. </li>
+<li></li>
+<li>@param groupAddr </li>
+<li>the multicast group to be joined. </li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public void joinGroup(InetAddress groupAddr) throws IOException {<br> checkJoinOrLeave(groupAddr);<br> impl.join(groupAddr);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Adds this socket to the specified multicast group. A socket must join a </li>
+<li>group before data may be received. A socket may be a member of multiple </li>
+<li>groups but may join any group only once. </li>
+<li></li>
+<li>@param groupAddress </li>
+<li>the multicast group to be joined. </li>
+<li>@param netInterface </li>
+<li>the network interface on which the datagram packets will be </li>
+<li>received. </li>
+<li>@throws IOException </li>
+<li>if the specified address is not a multicast address. </li>
+<li>@throws IllegalArgumentException </li>
+<li><p>if no multicast group is specified.<br>*/<br>public void joinGroup(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {<br>checkJoinOrLeave(groupAddress, netInterface);<br>impl.joinGroup(groupAddress, netInterface);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Removes this socket from the specified multicast group. </li>
+<li></li>
+<li>@param groupAddr </li>
+<li>the multicast group to be left. </li>
+<li>@throws NullPointerException </li>
+<li>if {@code groupAddr} is {@code null}. </li>
+<li>@throws IOException </li>
+<li><p>if the specified group address is not a multicast address.<br>*/<br>public void leaveGroup(InetAddress groupAddr) throws IOException {<br>checkJoinOrLeave(groupAddr);<br>impl.leave(groupAddr);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Removes this socket from the specified multicast group. </li>
+<li></li>
+<li>@param groupAddress </li>
+<li>the multicast group to be left. </li>
+<li>@param netInterface </li>
+<li>the network interface on which the addresses should be </li>
+<li>dropped. </li>
+<li>@throws IOException </li>
+<li>if the specified group address is not a multicast address. </li>
+<li>@throws IllegalArgumentException </li>
+<li><p>if {@code groupAddress} is {@code null}.<br>*/<br>public void leaveGroup(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {<br>checkJoinOrLeave(groupAddress, netInterface);<br>impl.leaveGroup(groupAddress, netInterface);<br>}  </p>
+<p>private void checkJoinOrLeave(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {<br>checkOpen();<br>if (groupAddress == null) {<br>throw new IllegalArgumentException(“groupAddress == null”);<br>}  </p>
+<p>if (netInterface != null &amp;&amp; !netInterface.getInetAddresses().hasMoreElements()) {<br>throw new SocketException(“No address associated with interface: “ + netInterface);<br>}  </p>
+<p>if (!(groupAddress instanceof InetSocketAddress)) {<br>throw new IllegalArgumentException(“Group address not an InetSocketAddress: “ +<br>groupAddress.getClass());<br>}  </p>
+<p>InetAddress groupAddr = ((InetSocketAddress) groupAddress).getAddress();<br>if (groupAddr == null) {<br>throw new SocketException(“Group address has no address: “ + groupAddress);<br>}  </p>
+<p>if (!groupAddr.isMulticastAddress()) {<br>throw new IOException(“Not a multicast group: “ + groupAddr);<br>}<br>}  </p>
+<p>private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {<br>checkOpen();<br>if (groupAddr == null) {<br>throw new IllegalArgumentException(“groupAddress == null”);<br>}<br>if (!groupAddr.isMulticastAddress()) {<br>throw new IOException(“Not a multicast group: “ + groupAddr);<br>}<br>}  </p>
+<p>/** </p>
+</li>
+<li>Sends the given {@code packet} on this socket, using the given {@code ttl}. This method is </li>
+<li>deprecated because it modifies the TTL socket option for this socket twice on each call. </li>
+<li></li>
+<li>@throws IOException if an error occurs. </li>
+<li><p>@deprecated Use {@link #setTimeToLive} instead.<br>*/<br>@Deprecated<br>public void send(DatagramPacket packet, byte ttl) throws IOException {<br> checkOpen();<br> InetAddress packAddr = packet.getAddress();<br> int currTTL = getTimeToLive();<br> if (packAddr.isMulticastAddress() &amp;&amp; (byte) currTTL != ttl) {  </p>
+<pre><code>try {  
+    setTimeToLive(ttl &amp; 0xff);  
+    impl.send(packet);  
+} finally {  
+    setTimeToLive(currTTL);  
+}  
+</code></pre><p> } else {  </p>
+<pre><code>impl.send(packet);  
+</code></pre><p> }<br>}  </p>
+<p>/** </p>
+</li>
+<li>Sets the outgoing network interface used by this socket. The interface used is the first </li>
+<li>interface found to have the given {@code address}. To avoid inherent unpredictability, </li>
+<li>new code should use {@link #getNetworkInterface} instead. </li>
+<li></li>
+<li><p>@throws SocketException if an error occurs.<br>*/<br>public void setInterface(InetAddress address) throws SocketException {<br> checkOpen();<br> if (address == null) {  </p>
+<pre><code>throw new NullPointerException(&quot;address == null&quot;);  
+</code></pre><p> }  </p>
+<p> NetworkInterface networkInterface = NetworkInterface.getByInetAddress(address);<br> if (networkInterface == null) {  </p>
+<pre><code>throw new SocketException(&quot;Address not associated with an interface: &quot; + address);  
+</code></pre><p> }<br> impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());<br> this.setAddress = address;<br>}  </p>
+<p>/** </p>
+</li>
+<li>Sets the outgoing network interface used by this socket to the given </li>
+<li>{@code networkInterface}. </li>
+<li></li>
+<li><p>@throws SocketException if an error occurs.<br>*/<br>public void setNetworkInterface(NetworkInterface networkInterface) throws SocketException {<br> checkOpen();<br> if (networkInterface == null) {  </p>
+<pre><code>throw new SocketException(&quot;networkInterface == null&quot;);  
+</code></pre><p> }  </p>
+<p> impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());<br> this.setAddress = null;<br>}  </p>
+<p>/** </p>
+</li>
+<li>Sets the time-to-live (TTL) for multicast packets sent on this socket. </li>
+<li>Valid TTL values are between 0 and 255 inclusive. </li>
+<li></li>
+<li><p>@throws IOException if an error occurs.<br>*/<br>public void setTimeToLive(int ttl) throws IOException {<br> checkOpen();<br> if (ttl &lt; 0 || ttl &gt; 255) {  </p>
+<pre><code>throw new IllegalArgumentException(&quot;TimeToLive out of bounds: &quot; + ttl);  
+</code></pre><p> }<br> impl.setTimeToLive(ttl);<br>}  </p>
+<p>/** </p>
+</li>
+<li>Sets the time-to-live (TTL) for multicast packets sent on this socket. </li>
+<li>Valid TTL values are between 0 and 255 inclusive. </li>
+<li></li>
+<li>@throws IOException if an error occurs. </li>
+<li><p>@deprecated Use {@link #setTimeToLive} instead.<br>*/<br>@Deprecated<br>public void setTTL(byte ttl) throws IOException {<br> checkOpen();<br> impl.setTTL(ttl);<br>}  </p>
+<p>@Override<br>synchronized void createSocket(int aPort, InetAddress addr) throws SocketException {<br> impl = factory != null ? factory.createDatagramSocketImpl() : new PlainDatagramSocketImpl();<br> impl.create();<br> try {  </p>
+<pre><code>impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);  
+impl.bind(aPort, addr);  
+isBound = true;  
+</code></pre><p> } catch (SocketException e) {  </p>
+<pre><code>close();  
+throw e;  
+</code></pre><p> }<br>}  </p>
+<p>/** </p>
+</li>
+<li>Returns true if multicast loopback is <i>disabled</i>. </li>
+<li>See {@link SocketOptions#IP_MULTICAST_LOOP}, and note that the sense of this is the </li>
+<li>opposite of the underlying Unix {@code IP_MULTICAST_LOOP}. </li>
+<li></li>
+<li><p>@throws SocketException if an error occurs.<br>*/<br>public boolean getLoopbackMode() throws SocketException {<br> checkOpen();<br> return !((Boolean) impl.getOption(SocketOptions.IP_MULTICAST_LOOP)).booleanValue();<br>}  </p>
+<p>/** </p>
+</li>
+<li>Disables multicast loopback if {@code disable == true}. </li>
+<li>See {@link SocketOptions#IP_MULTICAST_LOOP}, and note that the sense of this is the </li>
+<li>opposite of the underlying Unix {@code IP_MULTICAST_LOOP}: true means disabled, false </li>
+<li>means enabled. </li>
+<li></li>
+<li>@throws SocketException if an error occurs.<br>*/<br>public void setLoopbackMode(boolean disable) throws SocketException {<br> checkOpen();<br> impl.setOption(SocketOptions.IP_MULTICAST_LOOP, Boolean.valueOf(!disable));<br>}<br>}  </li>
+</ul>
+</li>
+</ul>
+<p>了解一下该类后可以开始下面的编程，首先说一下客户端，再说服务端，最后说明使用方法<br>①客户端代码核心：</p>
+<p>[java] view plain copy<br>@Override<br>protected void onResume() {<br>    super.onResume();<br>    /** </p>
+<pre><code> * @author Engineer-Jsp 
+ * 笔者在该 Activity 的 onResume()函数初始化接收的侦听 
+ */  
+onBrodacastReceiver();  
+</code></pre><p>}<br>②onBrodacastReceiver()函数：<br>[java] view plain copy<br>MulticastSocket multicastSocket;  </p>
+<p>/** </p>
+<ul>
+<li>@author Engineer-Jsp </li>
+<li>onBrodacastReceiver()<br>*/<br>private void onBrodacastReceiver() {<br> new Thread(new Runnable() {  <pre><code>@Override  
+public void run() {  
+    try {  
+        // 接收数据时需要指定监听的端口号  
+        multicastSocket = new MulticastSocket(10001);  
+        // 创建组播ID地址  
+        InetAddress address = InetAddress.getByName(&quot;239.0.0.1&quot;);  
+        // 加入地址  
+        multicastSocket.joinGroup(address);  
+        // 包长  
+        byte[] buf = new byte[1024];  
+        while (true) {  
+            // 数据报  
+            DatagramPacket datagramPacket = new DatagramPacket(buf, buf.length);  
+            // 接收数据，同样会进入阻塞状态  
+            multicastSocket.receive(datagramPacket);   
+            // 从buffer中截取收到的数据  
+            byte[] message = new byte[datagramPacket.getLength()];  
+            // 数组拷贝  
+            System.arraycopy(buf, 0, message, 0, datagramPacket.getLength());  
+            // 打印来自组播里其他服务的or客户端的ip  
+            System.out.println(datagramPacket.getAddress());  
+            // 打印来自组播里其他服务的or客户端的消息  
+            System.out.println(new String(message));  
+            // 收到消息后可以进行记录然后二次确认，如果只是想获取ip，在发送方收到该消息后可关闭套接字，从而释放资源  
+            onBrodacastSend(datagramPacket.getAddress());  
+        }  
+    } catch (IOException e) {  
+        e.printStackTrace();  
+    }  
+}  
+</code></pre> }).start();<br>}  </li>
+</ul>
+<p>③ onBrodacastSend() 函数<br>[java] view plain copy<br>/** </p>
+<ul>
+<li>onBrodacastSend() </li>
+<li>@author Engineer-Jsp </li>
+<li>@param address ip<br>*/<br>private void onBrodacastSend(InetAddress address) {<br> // 假设 239.0.0.1 已经收到了来自其他组ip段的消息，为了进行二次确认，发送 “snoop”<br> // 进行确认，当发送方收到该消息可以释放资源<br> String out = “snoop”;<br> // 获取”snoop”的字节数组<br> byte[] buf = out.getBytes();<br> // 组报<br> DatagramPacket datagramPacket = new DatagramPacket(buf, buf.length);<br> // 设置地址，该地址来自onBrodacastReceiver()函数阻塞数据报，datagramPacket.getAddress()<br> datagramPacket.setAddress(address);<br> // 发送的端口号<br> datagramPacket.setPort(8082);<br> try {  <pre><code>// 开始发送  
+multicastSocket.send(datagramPacket);  
+</code></pre> } catch (IOException e) {  <pre><code>e.printStackTrace();  
+</code></pre> }<br>}  </li>
+</ul>
+<p>这是客户端的代码，下面开始上服务端的代码<br>①初始化</p>
+<p>[java] view plain copy<br>@Override<br>protected void onResume() {<br>    super.onResume();<br>    /** </p>
+<pre><code> * @author Engineer-Jsp  
+ * 笔者在该 Activity 的 onResume()函数初始化接收和发送 
+ * onBrodacastSend() 发送 
+ * onBrodacastReceiver() 接收 
+ */  
+onBrodacastSend();  
+onBrodacastReceiver();  
+</code></pre><p>}<br>② onBrodacastSend() 函数<br>[java] view plain copy<br>InetAddress address;<br>MulticastSocket multicastSocket;  </p>
+<p>/** </p>
+<ul>
+<li>@author Engineer-Jsp  </li>
+<li>onBrodacastSend() 发送<br>*/<br>private void onBrodacastSend() {<br> try {  <pre><code>// 侦听的端口  
+multicastSocket = new MulticastSocket(8082);  
+// 使用D类地址，该地址为发起组播的那个ip段，即侦听10001的套接字  
+address = InetAddress.getByName(&quot;239.0.0.1&quot;);  
+new Thread(new Runnable() {  
+    @Override  
+    public void run() {  
+        while (true) {  
+            // 获取当前时间  
+            String time = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(new Date());  
+            // 当前时间+标识后缀  
+            time = time + &quot; &gt;&gt;&gt; form server onBrodacastSend()&quot;;  
+            // 获取当前时间+标识后缀的字节数组  
+            byte[] buf = time.getBytes();  
+            // 组报  
+            DatagramPacket datagramPacket = new DatagramPacket(buf, buf.length);  
+            // 向组播ID，即接收group /239.0.0.1  端口 10001  
+            datagramPacket.setAddress(address);   
+            // 发送的端口号  
+            datagramPacket.setPort(10001);  
+            try {  
+                // 开始发送  
+                multicastSocket.send(datagramPacket);  
+                // 每执行一次，线程休眠2s，然后继续下一次任务  
+                Thread.sleep(2000);  
+            } catch (InterruptedException e) {  
+                e.printStackTrace();  
+            } catch (IOException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+    }  
+}).start();  
+</code></pre> } catch (UnknownHostException e) {  <pre><code>e.printStackTrace();  
+</code></pre> } catch (IOException e) {  <pre><code>e.printStackTrace();  
+</code></pre> }<br>}  </li>
+</ul>
+<p>③onBrodacastReceiver(）函数<br>[java] view plain copy<br>/** </p>
+<ul>
+<li>@author Engineer-Jsp  </li>
+<li>onBrodacastReceiver() 接收<br>*/<br>private void onBrodacastReceiver() {<br> new Thread(new Runnable() {  <pre><code>@Override  
+public void run() {  
+    try {  
+        // 字节数组的格式，即最大大小  
+        byte[] buf = new byte[1024];  
+        while (true) {  
+            // 组报格式  
+            DatagramPacket datagramPacket = new DatagramPacket(buf, buf.length);  
+            // 接收来自group组播10001端口的二次确认，阻塞  
+            multicastSocket.receive(datagramPacket);  
+            // 从buf中截取收到的数据  
+            byte[] message = new byte[datagramPacket.getLength()];  
+            // 数组拷贝  
+            System.arraycopy(buf, 0, message, 0, datagramPacket.getLength());  
+            // 这里打印ip字段  
+            System.out.println(datagramPacket.getAddress());  
+            // 打印组播端口10001发送过来的消息  
+            System.out.println(new String(message));  
+            // 这里可以根据结接收到的内容进行分发处理，假如收到 10001的 &quot;snoop&quot;字段为关闭命令，即可在此处关闭套接字从而释放资源  
+        }  
+    } catch (IOException e) {  
+        e.printStackTrace();  
+    }  
+}  
+</code></pre> }).start();<br>}  </li>
+</ul>
+<p>这是服务端的代码，也分享完了，下面画一个图来大概描述一下他们的工作流程图示意：</p>
+<p>使用方法：①首先需要在同一wifi网络下 ②需要获取所有ip的手机安装客户端，即侦听10001的那个端口 ③所有需要将信息共享并组播到 239.0.0.1:10001这个group的安装服务端 ④开启服务端与客户端开始进行数据的交互</p>
+<p>以上是大致的描述图，帮助大家理解，谢谢观博！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MulticastSocket/" rel="tag"># MulticastSocket</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/24/Android基本技术点回顾/" rel="next" title="Android 基本技术点回顾">
+                <i class="fa fa-chevron-left"></i> Android 基本技术点回顾
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/24/ed/ndroid-WiFi-p2p/" rel="prev" title="Android WiFi p2p">
+                Android WiFi p2p <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">大帅</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">侯大帅</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">11.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('6');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+
+
+</body>
+</html>
