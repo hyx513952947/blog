@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vpn]]></title>
+    <url>%2F2018%2F05%2F25%2Fpn%2F</url>
+    <content type="text"><![CDATA[搬瓦工账号：513952947@qq.com密码；** wh服务器地址]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Android 矢量图动画]]></title>
+    <url>%2F2018%2F05%2F25%2Fndroid-%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%8A%A8%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[矢量图来源 在Android中正常的是： f &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; ...&gt; &lt;path/&gt; &lt;/vector&gt; vector标签中包含路径，动画就需要使用&lt;group&gt; path... &lt;/group&gt;包裹路径，并对包裹路径的group设置动画属性来控制该标签内的路径变化； xml实现动画方式 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;animated-vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:drawable=&quot;vector图片&quot;&gt; &lt;target android:animation=&quot;@animator/动画xml&quot; android:name=&quot;要做动画的path、在group中path的定义名称&quot;/&gt; &lt;target android:name=&quot;要做动画的path&quot; android:animation=&quot;@animator/smile_morph&quot;/&gt; &lt;/animated-vector&gt; AnimatedVectorDrawable smileDrawable = (AnimatedVectorDrawable) imageView.getDrawable(); smileDrawable.start();调用 java代码实现方式 矢量图动画网站]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Palette]]></title>
+    <url>%2F2018%2F05%2F25%2Falette%2F</url>
+    <content type="text"><![CDATA[Palette‘com.android.support:palette-v7:27.1.1’ Vibrant: 亮色 Vibrant dark: 深亮色 Vibrant light: 浅亮色 Muted: 暗色 Muted dark: 深暗色 Muted light: 浅暗色]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>颜色提取</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android statusBar]]></title>
+    <url>%2F2018%2F05%2F25%2Fdroid-statusBar%2F</url>
+    <content type="text"><![CDATA[View mDecorView; private static String TAG = &quot;StatusBarActivity&quot;; @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); mDecorView = findViewById(android.R.id.content); mDecorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() { @Override public void onSystemUiVisibilityChange(int visibility) { // Note that system bars will only be &quot;visible&quot; if none of the // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set. if ((visibility &amp; View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) { // TODO: The system bars are visible. Make any desired // adjustments to your UI, such as showing the action bar or // other navigational controls. } else { // TODO: The system bars are NOT visible. Make any desired // adjustments to your UI, such as hiding the action bar or // other navigational controls. } } }); showSystemUI(); setContentView(R.layout.activity_status_bar); findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { hideSystemUI(); } }); } private void showSystemUI() { //显示状态栏 mDecorView.setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN); } private void hideSystemUI() { // Set the IMMERSIVE flag. 设置沉浸式 //SYSTEM_UI_FLAG_IMMERSIVE_STICKY 内滑显示状态栏 会自动消失 //SYSTEM_UI_FLAG_IMMERSIVE 内滑显示状态栏 不会自动消失 // Set the content to appear under the system bars so that the content // doesn&apos;t resize when the system bars hide and show. mDecorView.setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY); }]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>statusBar</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[FileProvider]]></title>
     <url>%2F2018%2F05%2F24%2FFileProvider%2F</url>
     <content type="text"><![CDATA[为了给应用程序定义一个FileProvider，需要在Manifest清单文件中定义一个entry，该entry指明了需要使用的创建Content URI的Authority。此外，还需要一个XML文件的文件名，该XML文件指定了我们的应用可以共享的目录路径。 下例展示了如何在清单文件中添加标签，来指定FileProvider类，Authority及XML文件名： &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; package=&quot;com.example.myapp&quot;&gt; &lt;application ...&gt; &lt;provider android:name=&quot;android.support.v4.content.FileProvider&quot; android:authorities=&quot;com.example.myapp.fileprovider&quot; android:grantUriPermissions=&quot;true&quot; android:exported=&quot;false&quot;&gt; &lt;meta-data android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot; android:resource=&quot;@xml/filepaths&quot; /&gt; &lt;/provider&gt; ... &lt;/application&gt; &lt;/manifest&gt; 在“res/xml/”下创建文件“filepaths.xml”。在这个文件中，为每一个想要共享目录添加一个XML标签 &lt;paths&gt; &lt;files-path path=&quot;images/&quot; name=&quot;myimages&quot; /&gt; &lt;/paths&gt; 标签共享的是在我们应用的内部存储中“files/”目录下的目录。“path”属性字段指出了该子目录为“files/”目录下的子目录“images/”。“name”属性字段告知FileProvider在“files/images/”子目录中的文件的Content URI添加路径分段（path segment）标记：“myimages”。 标签可以有多个子标签，每一个子标签用来指定不同的共享目录。除了标签，还可以使用来共享位于外部存储的目录；另外，标签用来共享在内部缓存目录下的子目录。 在文件分享是时调用给与临时的权限： Intent.addFlags( Intent.FLAG_GRANT_READ_URI_PERMISSION);]]></content>
