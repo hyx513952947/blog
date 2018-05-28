@@ -5,7 +5,7 @@ tags:
 ---
 [搬瓦工](https://bandwagonhost.com/)
 账号：513952947@qq.com 
-密码；** wh
+密码；** w
 [服务器地址](https://kiwivm.64clouds.com/main.php)
 
 - 服务器安装：
@@ -40,5 +40,3 @@ tags:
               pip install shadowsocks
               sudo apt install shadowsocks
               sslocal -s [ip地址] -p [端口号] -k [密码] -l [1080本地端口] -t [超时] -m aes-256-cfb
-      
-      
