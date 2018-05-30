@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="菜园子">
 <meta property="og:description" content="WorkManager    主要的类  WorkManager：管理任务，开启任务  WorkManager 方法WorkManager getInstance()： 获取实例 initialize(@NonNull Context context, @NonNull Configuration configuration)： 获取实例，参数二配置线程池 enqueue(@NonNull Wor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T09:40:03.708Z">
+<meta property="og:updated_time" content="2018-05-30T04:29:48.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WorkManager">
 <meta name="twitter:description" content="WorkManager    主要的类  WorkManager：管理任务，开启任务  WorkManager 方法WorkManager getInstance()： 获取实例 initialize(@NonNull Context context, @NonNull Configuration configuration)： 获取实例，参数二配置线程池 enqueue(@NonNull Wor">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-29T17:40:03+08:00">
-                2018-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-30T12:29:48+08:00">
+                2018-05-30
               </time>
             
           </span>
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  486个字
+                  587个字
                 </span>
               
 
@@ -410,7 +410,7 @@
       
 
       
-        <h3 id="WorkManager"><a href="#WorkManager" class="headerlink" title="WorkManager"></a>WorkManager</h3><blockquote>
+        <h3 id="WorkManager"><a href="#WorkManager" class="headerlink" title="WorkManager"></a><a href="https://codelabs.developers.google.com/codelabs/android-workmanager/" target="_blank" rel="noopener">WorkManager</a></h3><blockquote>
 <p>   主要的类</p>
 </blockquote>
 <pre><code>WorkManager：管理任务，开启任务
@@ -449,7 +449,7 @@ LiveData&lt;List&lt;WorkStatus&gt;&gt; getStatusesForUniqueWork(
   @NonNull String uniqueWorkName)：
 字面。
 SynchronousWorkManager synchronous()：
-返回的对象方法什么的跟原来的WorkManager方法都差不多，干啥用的呢????
+返回的对象方法什么的跟原来的WorkManager方法都差不多，这个是同步方法，不能在主线程中运行。在子线程中使用，能直接知道是否添加成功
 </code></pre></li>
 </ul>
 </li>
@@ -468,12 +468,31 @@ SynchronousWorkManager synchronous()：
 </code></pre></li>
 <li><p>Worker</p>
 <blockquote>
-<p>任务基本单元，有已经实现好的几个类，自己实现只需要复写 dowork就可以。通过get方法能获取到传递的所有信息数据。一下列出已经实现的该类的对象。</p>
+<p>任务基本单元，有已经实现好的几个类，自己实现只需要复写 dowork就可以，类单独写，不能是内部类实现，否则实例化不了。通过get方法能获取到传递的所有信息数据。下列出已经实现的该类的对象。</p>
 </blockquote>
 <ul>
 <li>CombineContinuationsWorker<pre><code>工作任务流组合，能够像链条一样
 </code></pre></li>
 <li>ConstraintTrackingWorker<pre><code>当约束符合条件,可以传如参数（类名称），通过不同参数实现不同代理
+</code></pre></li>
+</ul>
+</li>
+<li><p>Constraints</p>
+<blockquote>
+<p>约束，设定任务在什么系统的什么情况下能够启动</p>
+</blockquote>
+<ul>
+<li>mRequiredNetworkType<pre><code>什么网络条件下启动
+</code></pre></li>
+<li>mRequiresCharging <pre><code>充电
+</code></pre></li>
+<li>mRequiresDeviceIdle<pre><code>休眠
+</code></pre></li>
+<li>mRequiresBatteryNotLow<pre><code>电量不高
+</code></pre></li>
+<li>mRequiresStorageNotLow<pre><code>内存不高
+</code></pre></li>
+<li>mContentUriTriggers<pre><code>uri触发启动
 </code></pre></li>
 </ul>
 </li>
@@ -685,7 +704,7 @@ SynchronousWorkManager synchronous()：
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.4k</span>
+    <span title="Site words total count">15.5k</span>
   
 </div>
 
