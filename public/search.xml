@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[gradle 笔记01]]></title>
+    <url>%2F2018%2F06%2F25%2Fradle-%E7%AC%94%E8%AE%B001%2F</url>
+    <content type="text"><![CDATA[任务的按照dofirst{}dolast{}顺序执行&lt;&lt; 符号是dolast的别名ext是创建的任务的额外任务属性]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Canvan的几个方法含义]]></title>
+    <url>%2F2018%2F06%2F11%2Fnvan%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AB%E4%B9%89%2F</url>
+    <content type="text"><![CDATA[save保存当前绘制属性，画布坐标变化之前的状态 restore绘制属性回退到上一个保存堆栈的上一个状态]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Shader]]></title>
+    <url>%2F2018%2F06%2F11%2Fader%2F</url>
+    <content type="text"><![CDATA[着色器 LinearGradient 线性变色，Shader shader = new LinearGradient(0, 0, 100, 100, Color.RED, Color.GREEN, Shader.TileMode.REPEAT); 参数：第一个是x开始坐标，第二个是y开始坐标，三、四结束x、y坐标，左边是根据view的坐标系开始计算的，五是模式：重复还是扩展、镜像 RadialGradient辐射渐变，由一中心点渐变 SweepGradient 像雷达一样 BitmapShader 图像BitmapShader(Bitmap bitmap, Shader.TileMode tileX, Shader.TileMode tileY) ComposeShader多个着色器组合使用 new ComposeShader(shader1, shader2, PorterDuff.Mode.SRC_OVER);]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[手势监听]]></title>
+    <url>%2F2018%2F06%2F11%2F%E5%8A%BF%E7%9B%91%E5%90%AC%2F</url>
+    <content type="text"><![CDATA[手势监听 VelocityTracker加速度监听 obtain()：实例化 addMovement(MotionEvent event)：添加事件 recycle()：回收]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[xml]]></title>
+    <url>%2F2018%2F05%2F30%2Fl%2F</url>
+    <content type="text"><![CDATA[https://www.studytutorial.in/android-sending-xml-or-soap-rest-api-request-using-okhttp-tutorial]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[WorkManager]]></title>
+    <url>%2F2018%2F05%2F29%2ForkManager%2F</url>
+    <content type="text"><![CDATA[WorkManager 主要的类 WorkManager：管理任务，开启任务 WorkManager 方法WorkManager getInstance()： 获取实例 initialize(@NonNull Context context, @NonNull Configuration configuration)： 获取实例，参数二配置线程池 enqueue(@NonNull WorkRequest... workRequest)： 添加后台任务 enqueue(@NonNull List&lt;? extends WorkRequest&gt; baseWork)： 添加后台任务 WorkContinuation beginWith(@NonNull OneTimeWorkRequest...work)： 开启不需要重复的任务，它只执行一遍，返回值WorkContinuation 是用来开启任务链的； 能够与其他的进行then、combine操作 WorkContinuation beginWith(@NonNull List&lt;OneTimeWorkRequest&gt; work)； 开启一组的上述任务 WorkContinuation beginUniqueWork( @NonNull String uniqueWorkName, @NonNull ExistingWorkPolicy existingWorkPolicy, @NonNull OneTimeWorkRequest... work) ： 该方法第一个参数是任务名称，名称是唯一的不能够重复；第二个参数ExistingWorkPOneTimeWorkRequestolicy是用来判断如果出现了重复的，是替换还是追加、还是不理会 继续保持当前的任务目标不变； cancelWorkById(@NonNull UUID id)： 根据uuid去取消任务，但是方法的调用不一定回起作用，如果正在执行，那么将不会取消，任务会正常的去完成。 void cancelAllWorkByTag(@NonNull String tag)： 与上相似。 void cancelUniqueWork(@NonNull String uniqueWorkName) 字面意思。 LiveData&lt;WorkStatus&gt; getStatusById(@NonNull UUID id); 能够监听任务的完成情况。 LiveData&lt;List&lt;WorkStatus&gt;&gt; getStatusesByTag(@NonNull String tag)： 字面。 LiveData&lt;List&lt;WorkStatus&gt;&gt; getStatusesForUniqueWork( @NonNull String uniqueWorkName)： 字面。 SynchronousWorkManager synchronous()： 返回的对象方法什么的跟原来的WorkManager方法都差不多，这个是同步方法，不能在主线程中运行。在子线程中使用，能直接知道是否添加成功 WorkRequest 任务请求 OneTimeWorkRequest 不重复的请求，执行一次； PeriodicWorkRequest重复执行 WorkSpec存入数据库的一些任务调度信息，时间、任务信息等 Worker 任务基本单元，有已经实现好的几个类，自己实现只需要复写 dowork就可以，类单独写，不能是内部类实现，否则实例化不了。通过get方法能获取到传递的所有信息数据。下列出已经实现的该类的对象。 CombineContinuationsWorker工作任务流组合，能够像链条一样 ConstraintTrackingWorker当约束符合条件,可以传如参数（类名称），通过不同参数实现不同代理 Constraints 约束，设定任务在什么系统的什么情况下能够启动 mRequiredNetworkType什么网络条件下启动 mRequiresCharging 充电 mRequiresDeviceIdle休眠 mRequiresBatteryNotLow电量不高 mRequiresStorageNotLow内存不高 mContentUriTriggersuri触发启动]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[定时任务的一个库]]></title>
     <url>%2F2018%2F05%2F29%2F%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BA%93%2F</url>
     <content type="text"><![CDATA[地址 https://blog.evernote.com/tech/2015/10/26/unified-job-library-android/能够根据不同版本去选择不同方式]]></content>
