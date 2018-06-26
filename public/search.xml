@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ViewGroup一些相关的类]]></title>
+    <url>%2F2018%2F06%2F26%2FewGroup%E4%B8%80%E4%BA%9B%E7%9B%B8%E5%85%B3%E7%9A%84%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[setWillNotDraw() 在viewgroup初始化的时候，它调用了一个私有方法：initViewGroup --&gt; setFlags（WILLL_NOT_DRAW,DRAW_MASK)，不会调用ondraw（）方法，自定义viewgroup时候需要setWillNotDraw(false)； descendantfocusability viewgroup控件在代码中或者xml中能设置该属性： FOCUS_BEFORE_DESCENDANTS ViewGroup本身先对焦点进行处理，如果没有处理则分发给child View进行处理 FOCUS_AFTER_DESCENDANTS 先分发给Child View进行处理，如果所有的Child View都没有处理，则自己再处理 FOCUS_BLOCK_DESCENDANTS ViewGroup本身进行处理，不管是否处理成功，都不会分发给ChildView进行处理 ViewCompat 这个是解决版本兼容性的 ViewPager内部的view根据位置绘制的，缓存多少个就在相邻位置绘制多少个]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[gradle 笔记01]]></title>
     <url>%2F2018%2F06%2F25%2Fradle-%E7%AC%94%E8%AE%B001%2F</url>
     <content type="text"><![CDATA[任务的按照dofirst{}dolast{}顺序执行&lt;&lt; 符号是dolast的别名ext是创建的任务的额外任务属性]]></content>
