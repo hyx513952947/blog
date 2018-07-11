@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[自定义标签]]></title>
+    <url>%2F2018%2F07%2F11%2F%E4%B9%89%E6%A0%87%E7%AD%BE%2F</url>
+    <content type="text"><![CDATA[功能要求： 容器能自动排列子标签 标签能够删除、添加 删除添加有动画 要有几个常用的标签（时间、地点、天气、心情） 常用的标签不能删除 自定义标签能够删除 视图有删除按钮]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Android Navigation使用]]></title>
+    <url>%2F2018%2F07%2F06%2Fndroid-Navigation%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[链接地址 https://developer.android.com/topic/libraries/architecture/navigation/navigation-implementing 使用需要在三处地方进行操作： navigation目录下的xml文件，该文件是配置路由的配置信息，fragment之间的跳转、传值、deeplink链接 java代码中进行跳转 视图xml中对View配置 1.模块工程的.gradle文件种添加依赖2. resource资源目录下创建navigation目录保存使用的导航路由配置文件 根标签 navigation 各个参数的使用startDestination：配置默认展示的fragment id值 3. 此框架应该是方便activity对fragment的管理，而不是管理activities之间的跳转管理。4. 配置标签 fragment-]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[iOS]]></title>
     <url>%2F2018%2F07%2F03%2FOS%2F</url>
     <content type="text"><![CDATA[侧滑框架优化:逻辑优化,结构优化 栏目切换优化:逻辑优化,自适应 新闻版式新增:轮播图,大图,多图,gif图,视频播放(窗口播放,全屏播放),标签 新闻详情:音频播放,分享等弹出框优化加载速度,加载优化 缓存优化:缓存阅读过的界面,数据库逻辑架构优化 加载优化:采用预缓存等技术加快加载速度 图片预览:更换预览框架. 搜索界面版式改进:搜索框样式,搜索历史]]></content>
